@@ -24,7 +24,6 @@ def get_db_byuptime(uptime):
         tags = rds.list_tags_for_resource(
             ResourceName = arn
         )['TagList']
-        # print(tags)
         for t in tags:
             if t['Key'].lower() == 'uptime' and t['Value'].lower() == uptime:
                 dblist.append(id)
